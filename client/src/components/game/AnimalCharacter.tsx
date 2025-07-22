@@ -29,11 +29,11 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
       sound: "にゃーん！",
       color: "#FF6347"
     },
-    rabbit: { 
-      emoji: "🐰", 
-      name: "うさぎ",
-      sound: "ぴょんぴょん！",
-      color: "#FFB6C1"
+    lion: { 
+      emoji: "🦁", 
+      name: "らいおん",
+      sound: "ガオー！",
+      color: "#DAA520"
     },
     pig: { 
       emoji: "🐷", 

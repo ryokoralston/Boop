@@ -79,7 +79,7 @@ function App() {
             </div>
             
             <div className="flex justify-center gap-2 md:gap-4 text-3xl md:text-4xl">
-              🐶 🐱 🐰 🐷 🐮
+              🐶 🐱 🦁 🐷 🐮
             </div>
             
             <Button
