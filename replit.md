@@ -18,6 +18,8 @@ Preferred communication style: Simple, everyday language.
 - Added one-at-a-time animal display with navigation buttons
 - Reduced from 5 to 4 animals (removed pig/sheep due to audio file issues)
 - Final animals: dog (🐶), cat (🐱), lion (🦁), cow (🐮)
+- Removed visual button overlay from animal faces for cleaner UI
+- Simplified interaction to audio-only feedback (removed text animations)
 
 ## System Architecture
 

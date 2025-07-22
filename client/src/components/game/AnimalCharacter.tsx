@@ -158,23 +158,7 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
           <span className="sr-only">{animal.name}</span>
         </button>
 
-        {/* Click feedback animation with animal sound */}
-        {isAnimating && (
-          <div className={`
-            absolute ${isMobile ? 'top-0' : 'top-0'} 
-            left-1/2 transform -translate-x-1/2 -translate-y-full
-          `}>
-            <div className={`
-              animate-bounce font-bold drop-shadow-lg text-center
-              ${isMobile ? 'text-4xl' : 'text-2xl'}
-            `}>
-              <div className="text-yellow-600 mb-1">Boop! ✨</div>
-              <div className="text-blue-600 text-lg">
-                {animal.sound}
-              </div>
-            </div>
-          </div>
-        )}
+
 
         {/* Animal name label - larger on mobile */}
         <div className={`
