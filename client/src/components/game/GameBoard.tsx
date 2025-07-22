@@ -89,17 +89,17 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
           <div className="text-6xl animate-pulse">🎉</div>
           <div className="space-y-3">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 animate-bounce">
-              おめでとう！
+              Congratulations!
             </h2>
             <p className="text-lg text-gray-600">
-              全部の動物をタップしました！
+              You tapped all the animals!
             </p>
             <div className="text-4xl animate-pulse">
               🐶 🐱 🦁 🐮
             </div>
           </div>
           <div className="text-sm text-gray-500 animate-pulse">
-            3秒後にメニューに戻ります...
+            Returning to menu in 3 seconds...
           </div>
         </div>
 
@@ -192,10 +192,10 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
       {/* Instructions */}
       <div className="relative z-10 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg max-w-sm mx-4 text-center">
         <p className="text-lg font-medium text-gray-700 mb-2">
-          {boopedAnimals.has(currentAnimalIndex) ? "タップ済み！ ✅" : "動物の鼻をタップしてね！ 👆"}
+          {boopedAnimals.has(currentAnimalIndex) ? "Tapped! ✅" : "Tap the animal! 👆"}
         </p>
         <p className="text-sm text-gray-500">
-          {boopedAnimals.size} / {animals.length} 匹タップ完了
+          {boopedAnimals.size} / {animals.length} animals tapped
         </p>
       </div>
     </div>

@@ -50,7 +50,7 @@ function App() {
               size="sm"
               className="bg-white/90"
             >
-              リスタート
+              Restart
             </Button>
           )}
         </div>
@@ -62,10 +62,10 @@ function App() {
           <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg max-w-md md:max-w-lg mx-4">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
-                動物の鼻をタップしよう！
+                Tap the Animals!
               </h2>
               <p className="text-base md:text-lg text-gray-600">
-                可愛い動物たちの鼻をタップして、鳴き声を聞いてみよう
+                Tap the cute animals to hear their sounds
               </p>
             </div>
             
@@ -78,7 +78,7 @@ function App() {
               size="lg"
               className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 bg-green-500 hover:bg-green-600 text-white w-full md:w-auto"
             >
-              ゲームスタート！
+              Start Game!
             </Button>
           </div>
         )}
@@ -91,10 +91,10 @@ function App() {
           <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg max-w-md md:max-w-lg mx-4">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
-                ゲーム終了！
+                Game Over!
               </h2>
               <p className="text-lg md:text-xl text-gray-600">
-                スコア: {score} 回タップ
+                Score: {score} taps
               </p>
             </div>
             
@@ -103,7 +103,7 @@ function App() {
               size="lg"
               className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 bg-blue-500 hover:bg-blue-600 text-white w-full md:w-auto"
             >
-              もう一度プレイ
+              Play Again
             </Button>
           </div>
         )}

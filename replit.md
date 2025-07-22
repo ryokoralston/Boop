@@ -23,6 +23,7 @@ Preferred communication style: Simple, everyday language.
 - Removed animal name labels for minimal, distraction-free interface
 - Added randomized animal order for replay variety
 - Removed mute button for simplified interface
+- Changed all UI language from Japanese to English
 
 ## System Architecture
 
