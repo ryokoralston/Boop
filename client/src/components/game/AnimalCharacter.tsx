@@ -160,19 +160,7 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
 
 
 
-        {/* Animal name label - larger on mobile */}
-        <div className={`
-          ${isMobile ? 'mt-6' : 'absolute -bottom-8'} 
-          left-1/2 transform -translate-x-1/2
-        `}>
-          <div className={`
-            bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 
-            font-medium text-gray-700 shadow-lg text-center
-            ${isMobile ? 'text-xl' : 'text-sm'}
-          `}>
-            {animal.name}
-          </div>
-        </div>
+
       </div>
     </div>
   );

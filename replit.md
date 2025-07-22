@@ -20,6 +20,7 @@ Preferred communication style: Simple, everyday language.
 - Final animals: dog (🐶), cat (🐱), lion (🦁), cow (🐮)
 - Removed visual button overlay from animal faces for cleaner UI
 - Simplified interaction to audio-only feedback (removed text animations)
+- Removed animal name labels for minimal, distraction-free interface
 
 ## System Architecture
 
