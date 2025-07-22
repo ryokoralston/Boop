@@ -26,6 +26,7 @@ Preferred communication style: Simple, everyday language.
 - Changed all UI language from Japanese to English
 - Added persistent scoring system that accumulates across replays
 - Score resets only when user closes browser/logs off
+- Changed score terminology from "taps" to "boops" for consistency
 
 ## System Architecture
 
