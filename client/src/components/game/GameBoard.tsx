@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimalCharacter } from "./AnimalCharacter";
 import { AnimalType } from "../../types/game";
 import { Button } from "../ui/button";
@@ -14,8 +14,18 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
   const [showCelebration, setShowCelebration] = useState(false);
   const { end } = useGame();
 
-  // Define all animals
-  const animals: AnimalType[] = useMemo(() => ["dog", "cat", "lion", "cow"], []);
+  // Shuffle function to randomize array
+  const shuffleArray = (array: AnimalType[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // Define all animals with randomized order - new order each time component mounts
+  const [animals] = useState<AnimalType[]>(() => shuffleArray(["dog", "cat", "lion", "cow"]));
   
   const currentAnimal = animals[currentAnimalIndex];
 

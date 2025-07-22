@@ -21,6 +21,7 @@ Preferred communication style: Simple, everyday language.
 - Removed visual button overlay from animal faces for cleaner UI
 - Simplified interaction to audio-only feedback (removed text animations)
 - Removed animal name labels for minimal, distraction-free interface
+- Added randomized animal order for replay variety
 
 ## System Architecture
 
