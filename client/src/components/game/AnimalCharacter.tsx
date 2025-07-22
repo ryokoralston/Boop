@@ -13,7 +13,7 @@ interface AnimalCharacterProps {
 
 export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isBooped = false }: AnimalCharacterProps) {
   const [isAnimating, setIsAnimating] = useState(false);
-  const { playSuccess } = useAudio();
+  const { playSuccess, isMuted } = useAudio();
 
   // Animal data mapping with Japanese names and sounds
   const animalData = {
@@ -57,14 +57,31 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
     setIsAnimating(true);
     onBoopClick();
 
-    // Play success sound effect
-    playSuccess();
+    // Play animal-specific sound for dog, fallback to success sound for others
+    if (!isMuted) {
+      if (type === 'dog') {
+        try {
+          const audio = new Audio('/sounds/dog.mp3');
+          audio.volume = 0.7;
+          await audio.play();
+        } catch (error) {
+          console.log("Dog sound play prevented:", error);
+          // Fallback to success sound
+          playSuccess();
+        }
+      } else {
+        // Play success sound effect for other animals
+        playSuccess();
+      }
+    } else {
+      console.log(`${type} sound skipped (muted)`);
+    }
 
     // Reset animation after duration
     setTimeout(() => {
       setIsAnimating(false);
     }, 800);
-  }, [onBoopClick, playSuccess, isAnimating, isBooped]);
+  }, [onBoopClick, playSuccess, isAnimating, isBooped, type]);
 
   // Position styles based on mobile or desktop
   const positionStyle = isMobile ? {

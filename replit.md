@@ -8,6 +8,15 @@ This is a full-stack web application featuring a cute animal "booping" game buil
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+**2025-01-22**: 
+- Added celebration screen with confetti animation when all 5 animals are tapped
+- Implemented progress tracking with visual indicators
+- Added real dog bark sound (mp3) that plays when dog character is tapped
+- Enhanced mobile-responsive layout for iPhone/Android devices
+- Added one-at-a-time animal display with navigation buttons
+
 ## System Architecture
 
 The application follows a full-stack monorepo architecture with clear separation between frontend and backend:
