@@ -35,12 +35,7 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
       sound: "ガオー！",
       color: "#DAA520"
     },
-    sheep: { 
-      emoji: "🐑", 
-      name: "ひつじ",
-      sound: "メェー！",
-      color: "#F0F8FF"
-    },
+
     cow: { 
       emoji: "🐮", 
       name: "うし",
@@ -86,16 +81,7 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
           console.log("Cat sound play prevented:", error);
           playSuccess();
         }
-      } else if (type === 'sheep') {
-        try {
-          const audio = new Audio('/sounds/hit.mp3');
-          audio.volume = 0.8;
-          audio.playbackRate = 2.0; // High pitch for sheep-like "baa" sound
-          await audio.play();
-        } catch (error) {
-          console.log("Sheep sound play prevented:", error);
-          playSuccess();
-        }
+
       } else if (type === 'lion') {
         try {
           const audio = new Audio('/sounds/lion.mp3');

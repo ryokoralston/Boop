@@ -15,7 +15,7 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
   const { end } = useGame();
 
   // Define all animals
-  const animals: AnimalType[] = useMemo(() => ["dog", "cat", "lion", "sheep", "cow"], []);
+  const animals: AnimalType[] = useMemo(() => ["dog", "cat", "lion", "cow"], []);
   
   const currentAnimal = animals[currentAnimalIndex];
 

@@ -1,4 +1,4 @@
-export type AnimalType = "dog" | "cat" | "lion" | "sheep" | "cow";
+export type AnimalType = "dog" | "cat" | "lion" | "cow";
 
 export interface AnimalPosition {
   type: AnimalType;

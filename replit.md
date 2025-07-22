@@ -11,11 +11,13 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 **2025-01-22**: 
-- Added celebration screen with confetti animation when all 5 animals are tapped
+- Added celebration screen with confetti animation when all animals are tapped
 - Implemented progress tracking with visual indicators
-- Added real dog bark sound (mp3) that plays when dog character is tapped
+- Added real animal sounds (mp3) for dog, cat, lion, and cow characters
 - Enhanced mobile-responsive layout for iPhone/Android devices
 - Added one-at-a-time animal display with navigation buttons
+- Reduced from 5 to 4 animals (removed pig/sheep due to audio file issues)
+- Final animals: dog (🐶), cat (🐱), lion (🦁), cow (🐮)
 
 ## System Architecture
 
