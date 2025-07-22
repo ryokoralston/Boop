@@ -85,7 +85,7 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
               全部の動物をタップしました！
             </p>
             <div className="text-4xl animate-pulse">
-              🐶 🐱 🦁 🐷 🐮
+              🐶 🐱 🦁 🐮
             </div>
           </div>
           <div className="text-sm text-gray-500 animate-pulse">
