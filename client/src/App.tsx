@@ -10,10 +10,33 @@ import "@fontsource/inter";
 function App() {
   const { phase, start, restart } = useGame();
   const { } = useAudio();
-  const [score, setScore] = useState(0);
+  
+  // Initialize score from localStorage, default to 0 if not found
+  const [score, setScore] = useState(() => {
+    const savedScore = localStorage.getItem('boopGameScore');
+    return savedScore ? parseInt(savedScore, 10) : 0;
+  });
 
   // Initialize audio on first user interaction
   const [audioInitialized, setAudioInitialized] = useState(false);
+
+  // Save score to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('boopGameScore', score.toString());
+  }, [score]);
+
+  // Reset score when user closes browser/tab
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('boopGameScore');
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   const handleStartGame = () => {
     if (!audioInitialized) {
@@ -23,7 +46,7 @@ function App() {
   };
 
   const handleRestartGame = () => {
-    setScore(0);
+    // Don't reset score on restart - keep accumulating
     restart();
   };
 

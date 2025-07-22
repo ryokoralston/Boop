@@ -24,6 +24,8 @@ Preferred communication style: Simple, everyday language.
 - Added randomized animal order for replay variety
 - Removed mute button for simplified interface
 - Changed all UI language from Japanese to English
+- Added persistent scoring system that accumulates across replays
+- Score resets only when user closes browser/logs off
 
 ## System Architecture
 
