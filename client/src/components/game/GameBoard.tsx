@@ -187,16 +187,18 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
         </Button>
       </div>
 
-      {/* Current animal character - centered and large for mobile */}
-      <div className="relative z-10 flex-1 flex items-center justify-center min-h-[400px]">
-        <AnimalCharacter
-          type={currentAnimal}
-          x={0} // Centered
-          y={0} // Centered
-          onBoopClick={handleAnimalBoop}
-          isMobile={true}
-          isBooped={boopedAnimals.has(currentAnimalIndex)}
-        />
+      {/* Current animal character - centered and positioned higher for mobile */}
+      <div className="relative z-10 flex-1 flex items-start justify-center pt-8 min-h-[400px]">
+        <div className="transform -translate-y-16">
+          <AnimalCharacter
+            type={currentAnimal}
+            x={0} // Centered
+            y={0} // Centered
+            onBoopClick={handleAnimalBoop}
+            isMobile={true}
+            isBooped={boopedAnimals.has(currentAnimalIndex)}
+          />
+        </div>
       </div>
 
       {/* Instructions */}
