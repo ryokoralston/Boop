@@ -88,8 +88,10 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
         }
       } else if (type === 'pig') {
         try {
-          const audio = new Audio('/sounds/pig.mp3');
+          // Temporarily use hit sound for pig until file access is resolved
+          const audio = new Audio('/sounds/hit.mp3');
           audio.volume = 0.7;
+          audio.playbackRate = 0.8; // Lower pitch for pig-like sound
           await audio.play();
         } catch (error) {
           console.log("Pig sound play prevented:", error);
