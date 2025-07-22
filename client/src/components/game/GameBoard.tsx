@@ -12,7 +12,7 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
   const [currentAnimalIndex, setCurrentAnimalIndex] = useState(0);
   const [boopedAnimals, setBoopedAnimals] = useState<Set<number>>(new Set());
   const [showCelebration, setShowCelebration] = useState(false);
-  const { end } = useGame();
+  const { end, phase } = useGame();
 
   // Shuffle function to randomize array
   const shuffleArray = (array: AnimalType[]) => {
@@ -24,8 +24,18 @@ export function GameBoard({ onAnimalClick }: GameBoardProps) {
     return shuffled;
   };
 
-  // Define all animals with randomized order - new order each time component mounts
-  const [animals] = useState<AnimalType[]>(() => shuffleArray(["dog", "cat", "lion", "cow"]));
+  // Define all animals with randomized order - new order each time component mounts OR game phase changes
+  const [animals, setAnimals] = useState<AnimalType[]>(() => shuffleArray(["dog", "cat", "lion", "cow"]));
+
+  // Reset animals order and game state when phase changes to playing (restart)
+  useEffect(() => {
+    if (phase === "playing") {
+      setAnimals(shuffleArray(["dog", "cat", "lion", "cow"]));
+      setCurrentAnimalIndex(0);
+      setBoopedAnimals(new Set());
+      setShowCelebration(false);
+    }
+  }, [phase]);
   
   const currentAnimal = animals[currentAnimalIndex];
 
