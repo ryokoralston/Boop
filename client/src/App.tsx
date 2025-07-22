@@ -9,7 +9,7 @@ import "@fontsource/inter";
 
 function App() {
   const { phase, start, restart } = useGame();
-  const { isMuted, toggleMute } = useAudio();
+  const { } = useAudio();
   const [score, setScore] = useState(0);
 
   // Initialize audio on first user interaction
@@ -43,15 +43,6 @@ function App() {
         </div>
         
         <div className="flex gap-2">
-          <Button
-            onClick={toggleMute}
-            variant="outline"
-            size="sm"
-            className="bg-white/90"
-          >
-            {isMuted ? "🔇" : "🔊"}
-          </Button>
-          
           {phase === "playing" && (
             <Button
               onClick={handleRestartGame}

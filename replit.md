@@ -22,6 +22,7 @@ Preferred communication style: Simple, everyday language.
 - Simplified interaction to audio-only feedback (removed text animations)
 - Removed animal name labels for minimal, distraction-free interface
 - Added randomized animal order for replay variety
+- Removed mute button for simplified interface
 
 ## System Architecture
 
