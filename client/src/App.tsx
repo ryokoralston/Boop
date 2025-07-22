@@ -68,24 +68,24 @@ function App() {
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center p-4">
         {phase === "ready" && (
-          <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+          <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg max-w-md md:max-w-lg mx-4">
             <div className="space-y-2">
-              <h2 className="text-4xl font-bold text-gray-800">
-                動物の鼻をクリックしよう！
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
+                動物の鼻をタップしよう！
               </h2>
-              <p className="text-lg text-gray-600">
-                可愛い動物たちの鼻をクリックして、鳴き声を聞いてみよう
+              <p className="text-base md:text-lg text-gray-600">
+                可愛い動物たちの鼻をタップして、鳴き声を聞いてみよう
               </p>
             </div>
             
-            <div className="flex justify-center gap-4 text-4xl">
+            <div className="flex justify-center gap-2 md:gap-4 text-3xl md:text-4xl">
               🐶 🐱 🐰 🐷 🐮
             </div>
             
             <Button
               onClick={handleStartGame}
               size="lg"
-              className="text-xl px-8 py-4 bg-green-500 hover:bg-green-600 text-white"
+              className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 bg-green-500 hover:bg-green-600 text-white w-full md:w-auto"
             >
               ゲームスタート！
             </Button>
@@ -97,20 +97,20 @@ function App() {
         )}
 
         {phase === "ended" && (
-          <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+          <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg max-w-md md:max-w-lg mx-4">
             <div className="space-y-2">
-              <h2 className="text-4xl font-bold text-gray-800">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
                 ゲーム終了！
               </h2>
-              <p className="text-xl text-gray-600">
-                スコア: {score} 回クリック
+              <p className="text-lg md:text-xl text-gray-600">
+                スコア: {score} 回タップ
               </p>
             </div>
             
             <Button
               onClick={handleRestartGame}
               size="lg"
-              className="text-xl px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white"
+              className="text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 bg-blue-500 hover:bg-blue-600 text-white w-full md:w-auto"
             >
               もう一度プレイ
             </Button>
