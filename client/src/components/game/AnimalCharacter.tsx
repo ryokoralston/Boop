@@ -148,25 +148,14 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
           )}
         </div>
 
-        {/* Clickable nose area - larger on mobile */}
+        {/* Invisible clickable area covering the entire animal */}
         <button
           onClick={handleNoseClick}
-          className={`
-            absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-            ${isMobile ? 'w-16 h-16' : 'w-8 h-8'} 
-            rounded-full border-4 border-white bg-black/20
-            hover:bg-yellow-400/50 active:bg-yellow-400/80
-            transition-all duration-200
-            ${isAnimating ? "animate-pulse bg-yellow-400/80" : ""}
-            shadow-lg
-          `}
-          style={{
-            marginTop: isMobile ? "-16px" : "-8px",
-            zIndex: 10,
-          }}
-          aria-label={`${animal.name}の鼻をタップ`}
+          className="absolute inset-0 w-full h-full bg-transparent cursor-pointer"
+          style={{ zIndex: 10 }}
+          aria-label={`${animal.name}をタップ`}
         >
-          <span className="sr-only">鼻</span>
+          <span className="sr-only">{animal.name}</span>
         </button>
 
         {/* Click feedback animation with animal sound */}
