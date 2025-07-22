@@ -35,11 +35,11 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
       sound: "ガオー！",
       color: "#DAA520"
     },
-    pig: { 
-      emoji: "🐷", 
-      name: "ぶた",
-      sound: "ブーブー！",
-      color: "#FFC0CB"
+    sheep: { 
+      emoji: "🐑", 
+      name: "ひつじ",
+      sound: "メェー！",
+      color: "#F0F8FF"
     },
     cow: { 
       emoji: "🐮", 
@@ -86,15 +86,13 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
           console.log("Cat sound play prevented:", error);
           playSuccess();
         }
-      } else if (type === 'pig') {
+      } else if (type === 'sheep') {
         try {
-          // Temporarily use hit sound for pig until file access is resolved
-          const audio = new Audio('/sounds/hit.mp3');
+          const audio = new Audio('/sounds/sheep.mp3');
           audio.volume = 0.7;
-          audio.playbackRate = 0.8; // Lower pitch for pig-like sound
           await audio.play();
         } catch (error) {
-          console.log("Pig sound play prevented:", error);
+          console.log("Sheep sound play prevented:", error);
           playSuccess();
         }
       } else if (type === 'lion') {
