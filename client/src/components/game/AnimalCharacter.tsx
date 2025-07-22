@@ -8,9 +8,10 @@ interface AnimalCharacterProps {
   y: number;
   onBoopClick: () => void;
   isMobile?: boolean;
+  isBooped?: boolean;
 }
 
-export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false }: AnimalCharacterProps) {
+export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isBooped = false }: AnimalCharacterProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const { playSuccess } = useAudio();
 
@@ -51,7 +52,7 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false }: A
   const animal = animalData[type];
 
   const handleNoseClick = useCallback(async () => {
-    if (isAnimating) return;
+    if (isAnimating || isBooped) return; // Don't allow clicking if already booped
 
     setIsAnimating(true);
     onBoopClick();
@@ -63,7 +64,7 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false }: A
     setTimeout(() => {
       setIsAnimating(false);
     }, 800);
-  }, [onBoopClick, playSuccess, isAnimating]);
+  }, [onBoopClick, playSuccess, isAnimating, isBooped]);
 
   // Position styles based on mobile or desktop
   const positionStyle = isMobile ? {
@@ -90,12 +91,22 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false }: A
             relative transition-all duration-300
             ${isMobile ? 'text-[12rem] md:text-[10rem]' : 'text-8xl'}
             ${isAnimating ? "scale-125 animate-bounce" : "hover:scale-110"}
+            ${isBooped ? "opacity-60 grayscale" : ""}
           `}
           style={{
-            filter: isAnimating ? "drop-shadow(0 0 30px rgba(255,255,0,0.8))" : "",
+            filter: isAnimating 
+              ? "drop-shadow(0 0 30px rgba(255,255,0,0.8))" 
+              : isBooped 
+                ? "drop-shadow(0 0 15px rgba(34,197,94,0.6))"
+                : "",
           }}
         >
           {animal.emoji}
+          {isBooped && (
+            <div className="absolute -top-4 -right-4 text-4xl animate-pulse">
+              ✅
+            </div>
+          )}
         </div>
 
         {/* Clickable nose area - larger on mobile */}
