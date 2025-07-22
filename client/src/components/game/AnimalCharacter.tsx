@@ -57,7 +57,7 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
     setIsAnimating(true);
     onBoopClick();
 
-    // Play animal-specific sound for dog, fallback to success sound for others
+    // Play animal-specific sounds
     if (!isMuted) {
       if (type === 'dog') {
         try {
@@ -66,7 +66,15 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
           await audio.play();
         } catch (error) {
           console.log("Dog sound play prevented:", error);
-          // Fallback to success sound
+          playSuccess();
+        }
+      } else if (type === 'cow') {
+        try {
+          const audio = new Audio('/sounds/cow.mp3');
+          audio.volume = 0.7;
+          await audio.play();
+        } catch (error) {
+          console.log("Cow sound play prevented:", error);
           playSuccess();
         }
       } else {
