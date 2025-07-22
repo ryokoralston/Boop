@@ -88,8 +88,9 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
         }
       } else if (type === 'sheep') {
         try {
-          const audio = new Audio('/sounds/sheep.mp3');
-          audio.volume = 0.7;
+          const audio = new Audio('/sounds/hit.mp3');
+          audio.volume = 0.8;
+          audio.playbackRate = 2.0; // High pitch for sheep-like "baa" sound
           await audio.play();
         } catch (error) {
           console.log("Sheep sound play prevented:", error);
