@@ -95,6 +95,15 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
           console.log("Pig sound play prevented:", error);
           playSuccess();
         }
+      } else if (type === 'lion') {
+        try {
+          const audio = new Audio('/sounds/lion.mp3');
+          audio.volume = 0.7;
+          await audio.play();
+        } catch (error) {
+          console.log("Lion sound play prevented:", error);
+          playSuccess();
+        }
       } else {
         // Play success sound effect for other animals
         playSuccess();
