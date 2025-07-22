@@ -52,51 +52,51 @@ export function AnimalCharacter({ type, x, y, onBoopClick, isMobile = false, isB
     setIsAnimating(true);
     onBoopClick();
 
-    // Play animal-specific sounds
-    if (!isMuted) {
-      if (type === 'dog') {
-        try {
-          const audio = new Audio('/sounds/dog.mp3');
-          audio.volume = 0.7;
-          await audio.play();
-        } catch (error) {
-          console.log("Dog sound play prevented:", error);
-          playSuccess();
-        }
-      } else if (type === 'cow') {
-        try {
-          const audio = new Audio('/sounds/cow.mp3');
-          audio.volume = 0.7;
-          await audio.play();
-        } catch (error) {
-          console.log("Cow sound play prevented:", error);
-          playSuccess();
-        }
-      } else if (type === 'cat') {
-        try {
-          const audio = new Audio('/sounds/cat.mp3');
-          audio.volume = 0.7;
-          await audio.play();
-        } catch (error) {
-          console.log("Cat sound play prevented:", error);
-          playSuccess();
-        }
+    // Play animal-specific sounds only if not muted
+    if (isMuted) {
+      console.log(`${type} sound skipped (muted)`);
+      return; // Exit early if muted
+    }
 
-      } else if (type === 'lion') {
-        try {
-          const audio = new Audio('/sounds/lion.mp3');
-          audio.volume = 0.7;
-          await audio.play();
-        } catch (error) {
-          console.log("Lion sound play prevented:", error);
-          playSuccess();
-        }
-      } else {
-        // Play success sound effect for other animals
+    if (type === 'dog') {
+      try {
+        const audio = new Audio('/sounds/dog.mp3');
+        audio.volume = 0.7;
+        await audio.play();
+      } catch (error) {
+        console.log("Dog sound play prevented:", error);
+        playSuccess();
+      }
+    } else if (type === 'cow') {
+      try {
+        const audio = new Audio('/sounds/cow.mp3');
+        audio.volume = 0.7;
+        await audio.play();
+      } catch (error) {
+        console.log("Cow sound play prevented:", error);
+        playSuccess();
+      }
+    } else if (type === 'cat') {
+      try {
+        const audio = new Audio('/sounds/cat.mp3');
+        audio.volume = 0.7;
+        await audio.play();
+      } catch (error) {
+        console.log("Cat sound play prevented:", error);
+        playSuccess();
+      }
+    } else if (type === 'lion') {
+      try {
+        const audio = new Audio('/sounds/lion.mp3');
+        audio.volume = 0.7;
+        await audio.play();
+      } catch (error) {
+        console.log("Lion sound play prevented:", error);
         playSuccess();
       }
     } else {
-      console.log(`${type} sound skipped (muted)`);
+      // Play success sound effect for other animals
+      playSuccess();
     }
 
     // Reset animation after duration
